@@ -1,0 +1,39 @@
+
+@keyframes fade-in {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* --- Dot Navigation Styles --- */
+.dot-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Active dot style */
+.active, .dot:hover {
+    background-color: #717171;
+}
+.wishlist-btn {
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.wishlist-btn:hover {
+    transform: scale(1.1); /* ឱ្យវាធំជាងមុនបន្តិចពេលដាក់ Mouse លើ */
+    background: #f8f9fa !important;
+}
+
+.wishlist-btn i:hover {
+    font-weight: 900; /* ប្តូរពីបេះដូងទទេ ទៅជាបេះដូងពេញ (បើប្រើ FontAwesome) */
+}

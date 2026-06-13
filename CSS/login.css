@@ -1,0 +1,142 @@
+/* --- 1. CSS Variables and Base Styles --- */
+:root {
+    --primary-color: #007bff; /* Bright Blue */
+    --accent-color: #28a745; /* Green Accent */
+    --background-light: rgba(255, 255, 255, 0.2); /* Translucent White */
+    --text-dark: #343a40;
+    --shadow-light: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --border-blur: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+body {
+    font-family: 'Khmer OS Battambang', 'Arial', sans-serif;
+    /* Create a cool, subtle gradient background */
+    background: linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Hide potential scrollbar from animation */
+}
+
+/* --- 2. Glassmorphism Container Style --- */
+form {
+    background: var(--background-light);
+    border-radius: 16px;
+    padding: 40px;
+    /* Glassmorphism effect */
+    box-shadow: var(--shadow-light);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: var(--border-blur);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+/* --- 3. Typography --- */
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white; /* White text on the dark/blurred background */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: white;
+    font-size: 15px;
+}
+
+/* --- 4. Input Fields --- */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9); /* Almost opaque white background for readability */
+    color: var(--text-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background-color: white;
+    box-shadow: 0 0 0 2px var(--primary-color);
+    outline: none;
+}
+
+/* --- 5. Button --- */
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 123, 255, 0.4);
+}
+
+/* --- 6. Link and Messages --- */
+p {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+p a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+p a:hover {
+    color: #218838;
+    text-decoration: underline;
+}
+
+/* Status Messages (Overriding inline styles for a cleaner look) */
+p[style*="color: green"] {
+    color: #155724 !important; /* Dark Green Text */
+    background-color: rgba(212, 237, 218, 0.9); /* Light Green Background */
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #c3e6c3;
+    margin-bottom: 15px;
+    text-shadow: none;
+}
+
+p[style*="color: red"] {
+    color: #721c24 !important; /* Dark Red Text */
+    background-color: rgba(248, 215, 218, 0.9); /* Light Red Background */
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 15px;
+    text-shadow: none;
+}

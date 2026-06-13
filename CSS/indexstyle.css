@@ -1,0 +1,532 @@
+/* --- Global Styles & Reset --- */
+:root {
+    --primary-color: #ff5722;
+    /* A shade of orange/red for accents */
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #f9f9f9;
+    --border-color: #ddd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    color: var(--text-dark);
+    overflow-x: hidden; /* ការពារកុំឱ្យធ្លាយអេក្រង់ទៅឆ្វេងស្តាំ */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- 1. Header Styling --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(172, 172, 172, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-left a {
+    margin-top: -8px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 30px;
+    margin-top: -8px;
+    color: red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: #666 2px 2px 4px;
+}
+
+.main-nav {
+    display: flex;
+}
+
+/* ១. ផ្នែក Link ធម្មតា (រៀបចំចំណាំសម្រាប់ធ្វើចលនា Scale) */
+.main-nav a {
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    padding-bottom: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: inline-block; /* ចាំបាច់ត្រូវមានដើម្បីឱ្យវាអាចធ្វើចលនា Scale បាន */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease; /* ចលនា Elastic Smooth */
+}
+
+/* ២. ផ្នែក Active Link (រក្សាស្ទីលបន្ទាត់ក្រោមចាស់របស់អ្នកដដែល) */
+.main-nav a.active {
+    color: #000 !important;
+    border-bottom: 3px solid #000 !important; 
+    padding-bottom: 8px !important;
+    font-weight: bold !important;
+}
+
+/* ៣. ផ្នែក Hover (ប្តូរទៅជា Scale ពង្រីកអក្សរ និងលុបបន្ទាត់ក្រោមចេញ) */
+.main-nav a:hover {
+    color: black;
+    transform: scale(1.1); /* ពង្រីកទំហំអក្សរឡើង ១០% យ៉ាងទន់ភ្លន់ */
+    border-bottom: none;   /* លុបបន្ទាត់ក្រោមចេញពេល hover ដើម្បីកុំឱ្យជាន់គ្នា */
+}
+/* ប៊ូតុង Toggle សម្រាប់ចុចបើក Menu លើទូរស័ព្ទ */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--bg-light);
+    margin-right: 20px;
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px 15px;
+    outline: none;
+    background-color: transparent;
+    width: 250px;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+/* User Actions */
+.user-actions {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.user-actions i {
+    font-size: 18px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.hero-banner {
+    width: 100%;
+    padding: 15px;
+}
+
+.hero-banner img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.15);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 10px;
+    }
+
+    .hero-banner img {
+        border-radius: 10px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .hero-banner {
+        padding: 5px;
+    }
+
+    .hero-banner img {
+        border-radius: 8px;
+    }
+}
+/* --- 3. Product Grid Styling --- */
+.product-grid {
+    display: grid;
+    /* ប្រើ auto-fit ដើម្បីឱ្យកាតធ្លាក់ជួរតាមទំហំអេក្រង់ដោយស្វ័យប្រវត្តិ */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1500px;
+    margin: 30px auto; /* ឱ្យរត់មកចំកណ្តាល (លុប margin-left: 60px ចេញរួចរាល់) */
+    padding: 0 20px;
+}
+
+/* ធាតុដែលគ្របដណ្ដប់លើ Product Card ទាំងអស់ */
+.product-container {
+    max-width: 1500px;
+    margin: 10px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* ធាតុ Product Card នីមួយៗ (រក្សាទុកចលនា Elastic cubic-bezier ដើម) */
+.product-card {
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* ប្តូរទៅជាអណ្តែតឡើងលើស្អាតជាងធ្លាក់ចុះក្រោម */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-container {
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.product-image-container img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+/* រូបភាព Zoom បន្តិចពេល Hover */
+.product-card:hover .product-image-container img {
+    transform: scale(1.1);
+}
+
+.product-specs p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+.product-details h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+/* តម្លៃ និងប៊ូតុង */
+.price-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.add-to-cart {
+    background-color: var(--text-dark);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    border: 2px solid black;
+    font-family: "Playfair Display", serif;
+}
+
+.add-to-cart:hover {
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+/* --- 4. Footer Styling --- */
+.main-footer {
+    background-color: white;
+    padding: 40px 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.col h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.col ul {
+    list-style: none;
+}
+
+.col ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.col.social .logo {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.social-icons i {
+    font-size: 20px;
+    margin-right: 15px;
+    color: var(--text-dark);
+}
+
+/* --- User Dropdown Menu CSS --- */
+.user-actions .user-dropdown {
+    display: inline-block;
+}
+
+.user-actions .user-summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+}
+
+.user-actions .user-summary .fas {
+    font-size: 1.2em;
+    color: inherit;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.user-actions .user-summary::-webkit-details-marker,
+.user-actions .user-summary::marker {
+    display: none;
+    content: "";
+}
+
+.user-actions .user-menu-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 100;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    padding: 8px 0;
+    margin-top: 5px;
+    list-style: none;
+}
+
+.user-actions .user-menu-list li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 0.95em;
+    color: var(--text-dark);
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.user-actions .user-menu-list li a:hover {
+    background-color: #f4f4f4;
+    color: var(--primary-color);
+}
+
+.user-actions .user-menu-list .separator {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 5px 0;
+}
+
+
+/* ===================================================
+   --- 5. ផ្នែក RESPONSIVE សម្រាប់ TABLET & MOBILE ---
+   =================================================== */
+
+@media (max-width: 992px) {
+    .main-header {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    .header-left {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .menu-toggle {
+        display: block; /* បង្ហាញប៊ូតុង Menu លើទូរស័ព្ទ */
+    }
+
+    /* បំប្លែងរាង Menu ឱ្យទៅជាបញ្ឈរធ្លាក់ចុះពីលើ */
+    .main-nav {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(172, 172, 172, 0.98); 
+        padding: 15px 20px;
+        box-sizing: border-box;
+        gap: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* បង្ហាញ Menu មកវិញពេលចុចបើក (បញ្ជាដោយ JS ថែម class show) */
+    .main-nav.show {
+        display: flex;
+    }
+
+    .main-nav a {
+        margin-right: 0;
+        padding-bottom: 8px;
+        width: 100%;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .search-bar {
+        flex-grow: 1;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+        .main-nav a {
+        margin-right: 0; /* លុបគម្លាតខាងស្តាំចេញ ព្រោះវាត្រូវរៀបជួរឈរ */
+        padding: 10px 0; /* បន្ថែមគម្លាតលើក្រោមឱ្យស្រួលចុចលើទូរស័ព្ទ */
+        width: 100%;     /* ឱ្យវាដាច់ជួរគ្នាពេញអេក្រង់ទូរស័ព្ទ */
+        border-bottom: 1px solid rgba(0,0,0,0.05); /* បន្ថែមបន្ទាត់ខណ្ឌស្តើងៗ */
+    }
+    
+    /* លុបបន្ទាត់ខណ្ឌក្រោមសម្រាប់ Link ចុងក្រោយគេ */
+    .main-nav a:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 15px; /* បន្ថយ padding ជុំវិញស្បែកដើម្បីកុំឱ្យវាច្របៀតឆ្វេងស្តាំ */
+    }
+    
+    .hero-banner img {
+        height: 200px; /* បន្ថយកម្ពស់ Banner លើទូរស័ព្ទឱ្យសមរម្យ */
+    }
+
+    /* បង្ខំឱ្យប្រព័ន្ធ Grid រត់ចំកណ្តាលស្មើគ្នា ចែកជា ២ ជួរលើទូរស័ព្ទដៃ */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 15px;
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+
+    .product-card {
+        padding: 15px;
+        border-radius: 18px;
+    }
+
+    .product-image-container {
+        height: 160px; /* បន្ថយទំហំប្រអប់រូបភាពកុំឱ្យធំពេកលើទូរស័ព្ទ */
+    }
+
+    .product-name {
+        font-size: 1rem;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* សម្រាប់ទូរស័ព្ទតូចខ្លាំង បង្ហាញ ១ កាតពេញអេក្រង់តែម្តង */
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    
+    .header-right {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .search-bar {
+        margin-right: 0;
+    }
+
+    .user-actions {
+        justify-content: space-around;
+        padding-top: 5px;
+    }
+}

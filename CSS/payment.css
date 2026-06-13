@@ -1,0 +1,132 @@
+:root {
+    --primary: #ff5722;
+    --dark: #2d3436;
+    --light: #636e72;
+    --white: #ffffff;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.payment-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--light);
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: var(--primary);
+}
+
+.payment-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.payment-header h2 {
+    margin: 0;
+    color: var(--dark);
+}
+
+.payment-header p {
+    color: var(--light);
+    font-size: 14px;
+}
+
+.amount-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #fff8f6;
+    border-radius: 20px;
+    border: 1px dashed var(--primary);
+}
+
+.total-amount {
+    margin: 5px 0 0 0;
+    color: var(--primary);
+    font-size: 40px;
+}
+
+.qr-section {
+    margin-bottom: 30px;
+}
+
+.qr-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.qr-wrapper img {
+    width: 200px;
+    height: 200px;
+    display: block;
+}
+
+.timer {
+    font-size: 13px;
+    color: #e74c3c;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.payment-instruction {
+    text-align: left;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.payment-instruction ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    color: var(--light);
+}
+
+.payment-instruction li {
+    margin-bottom: 5px;
+}
+
+.confirm-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.confirm-btn:hover {
+    background: #e64a19;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
+}

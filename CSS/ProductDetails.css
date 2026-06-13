@@ -1,0 +1,162 @@
+ /* General Reset and Page Centering */
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0; /* Light background for contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main Card Container */
+        .product-card {
+            width: 90%; /* Responsive width */
+            max-width: 400px; /* Constrain max width to around 400px */
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+          width: 100%; /* ឱ្យកាតរីកពេញ Column */
+        padding: 10px;
+            box-sizing: border-box; /* Include padding in the element's total width and height */
+        }
+
+        /* Main Product Display Section */
+        .main-product {
+            display: flex;
+            margin-bottom: 15px;
+            position: relative;
+            gap: 15px;
+        }
+
+        .product-image-container {
+            flex: 1; /* Takes up one part of the space */
+            padding: 10px;
+            background-color: #eee; /* Light gray background for the main image */
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 50%; /* Max width for the image section */
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-details {
+            flex: 1; /* Takes up the other part of the space */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Product Title and Arrow */
+        .title-arrow {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+
+        .product-details h2 {
+            font-size: 1.2em; /* Smaller font for constrained space */
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.2;
+            color: #333;
+        }
+
+        .arrow {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Specifications List */
+        .specs {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.85em; /* Small font size for specs */
+            line-height: 1.4;
+            color: #555;
+        }
+
+        .specs li {
+            margin-bottom: 2px;
+        }
+
+        .specs strong {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Price */
+        .price {
+            font-size: 1.5em; /* Prominent size for price */
+            font-weight: bold;
+            margin-top: 10px;
+            color: black;
+        }
+
+        /* Gallery/Thumbnail Images */
+        .thumbnail-gallery {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .thumbnail-gallery img {
+            width: 23%; /* Distribute space among 4 images */
+            height: auto;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .thumbnail-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Order Button */
+        .order-container {
+            display: flex;
+            justify-content: flex-end; /* Align to the right */
+        }
+
+        .order-button {
+            background-color: black;
+            color: white;
+            padding: 8px 18px;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.2s;
+        }
+
+        .order-button:hover {
+            background-color: #333;
+        }
+
+        /* Media Query for very small screens (if it needs to stack) */
+        @media (max-width: 350px) {
+            .main-product {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-image-container {
+                max-width: 100%;
+            }
+        }
