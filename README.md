@@ -63,7 +63,8 @@ computershopcshop/
 │   ├── OAuth.php
 │   └── Exception.php
 ├── Database_SQL/               # ឯកសារចម្លង/គ្រោងទិន្នន័យ SQL Backup
-├── images/                     # រូបភាពផលិតផល និងគេហទំព័រ
+​​​​​|   |__ db.php
+├── images/                     # រូបភាពផលិតផល និងគេហទំព័រ                                    
 ├── uploads/                    # ឯកសារដែលផ្ទុកឡើងដោយអ្នកប្រើប្រាស់
 ├── dashboard_admin/            # ផ្ទាំងគ្រប់គ្រងរបស់ Admin
 │   ├── admin_dashboard.php     # ទំព័រដើម Admin
@@ -103,7 +104,7 @@ computershopcshop/
 │   ├── payment.php             # ទំព័រជ្រើសរើសការទូទាត់
 │   ├── pay_aba.php             # ច្រកទូទាត់ប្រាក់ធនាគារ ABA
 │   ├── verify_khpay.php        # ការផ្ទៀងផ្ទាត់ប្រព័ន្ធ KhPay
-│   ├── complete_payment.php    # ការបញ្ចប់ការទូទាត់
+│   ├── complete_payment.php    # ការបញ្ចប់ការទូទាត់    
 │   ├── callback.php            # មុខងារ Callback ទទួលទិន្នន័យទូទាត់
 │   └── order_success.php       # ទំព័របញ្ជាក់ការទិញជោគជ័យ
 │
