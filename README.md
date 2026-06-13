@@ -36,7 +36,10 @@
 - **ការបង្កើតវិក្កយបត្រ**: បង្កើតវិក្កយបត្រឌីជីថលសម្រាប់ការបញ្ជាទិញ
 
 ---
-** 📁 រចនាសម្ព័ន្ធគម្រោង**
+
+## 📁 រចនាសម្ព័ន្ធគម្រោង
+
+```text
 computershopcshop/
 ├── index.php                    # ទំព័រដើមចម្បង
 ├── Component/                   # សមាសភាគ UI ដែលអាចប្រើឡើងវិញបាន
@@ -121,57 +124,5 @@ computershopcshop/
 │   └── completed.php           # ការបញ្ចប់ការបញ្ជាទិញទាំងស្រុង
 │
 └── Configuration/
-└── about.php               # ទំព័រអំពីយើង
-└── order_confirmation.php  # ទម្រង់អ៊ីមែលបញ្ជាក់ការបញ្ជាទិញ
----
-
-## 🛠 បច្ចេកវិទ្យាដែលប្រើប្រាស់
-
-| បច្ចេកវិទ្យា | ជំនាន់ (Version) | គោលបំណង |
-|-----------|---------|---------|
-| **PHP** | 7.x+ | ភាសាសម្រាប់បញ្ជាផ្នែក Backend |
-| **MySQL** | 5.7+ | ប្រព័ន្ធគ្រប់គ្រងមូលដ្ឋានទិន្នន័យ (Database) |
-| **HTML5** | - | រចនាសម្ព័ន្ធទម្រង់វេបសាយ |
-| **CSS3** | - | ការដេគ័រ និងការរចនាបថ |
-| **JavaScript** | ES6+ | មុខងារអន្តរកម្មលើ Frontend |
-| **Bootstrap** | 5.3.0 | ហ្វ្រេមវើកសម្រាប់រចនាបែប Responsive |
-| **Font Awesome** | 6.5.1 | រូបតំណាង និងសញ្ញាសម្គាល់ (Icons) |
-| **SweetAlert2** | 11 | ប្រអប់សារដំណឹងស្អាតៗ (Alert Dialogs) |
-| **PHPMailer** | Latest | បណ្ណាល័យសម្រាប់ផ្ញើអ៊ីមែល |
-
----
-
-## 📦 ការដំឡើង និងការកំណត់
-
-### តម្រូវការជាមុន
-- កម្មវិធី XAMPP/WAMP/LAMP ដែលមាន PHP ជំនាន់ 7.x ឬខ្ពស់ជាងនេះ
-- ប្រព័ន្ធទិន្នន័យ MySQL
-- កម្មវិធីរុករកគេហទំព័រទំនើប (Web Browser ដូចជា Chrome, Edge)
-
-### ជំហានអនុវត្ត
-
-1. **ទាញយក ឬចម្លងគម្រោង (Clone/Download Project)**
-   ```bash
-   # ពន្លាឯកសារដែលបានទាញយកទៅដាក់ក្នុង Web Root របស់អ្នក
-   # សម្រាប់ XAMPP: C:\xampp\htdocs\computershopcshop
-2. **បង្កើតមូលដ្ឋានទិន្នន័យ (Database)**
-   ```bash
-  #បើកកម្មវិធី phpMyAdmin (http://localhost/phpmyadmin)
-  #បង្កើត Database ថ្មីមួយដោយដាក់ឈ្មោះថា Cshop
-  #ធ្វើការ Import ឯកសារ SQL ចេញពីក្នុង Folder Database_SQL/
-3. **កំណត់រចនាសម្ព័ន្ធភ្ជាប់ទិន្នន័យ**
-  ```bash
-  #បើកកែប្រែឯកសារ db/db.php
-  #ធ្វើបច្ចុប្បន្នភាពព័ត៌មាននៃការភ្ជាប់៖
-    $host = "localhost";
-    $user = "root";
-    $pass = ""; // លេខសម្ងាត់ MySQL របស់អ្នក
-    $db = "Cshop";
-4. **កំណត់សិទ្ធិលើ Folder**
-  ```bash
-  #ធានាថា Folder uploads/ មានសិទ្ធិសរសេរទិន្នន័យចូល (Write Permissions)
-  #ធានាថា Folder images/ មានសិទ្ធិអាន និងសរសេរទិន្នន័យចូល (Read/Write Permissions)
-5. **ចូលប្រើប្រាស់កម្មវិធី**
-  ```bash
-  #ទំព័រដើមសម្រាប់អតិថិជន: http://localhost/computershopcshop/
-  #ទំព័រសម្រាប់ Admin: http://localhost/computershopcshop/dashboard_admin/admin_dashboard.php
+    ├── about.php               # ទំព័រអំពីយើង
+    └── order_confirmation.php  # ទម្រង់អ៊ីមែលបញ្ជាក់ការបញ្ជាទិញ
