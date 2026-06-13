@@ -126,3 +126,5 @@ computershopcshop/
 └── Configuration/
     ├── about.php               # ទំព័រអំពីយើង
     └── order_confirmation.php  # ទម្រង់អ៊ីមែលបញ្ជាក់ការបញ្ជាទិញ
+
+
